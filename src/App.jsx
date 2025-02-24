@@ -1,13 +1,25 @@
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import degli elementi della libreria gestione delle rotte
-import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// Pages
+import HomePage from "./components/pages/HomePage";
+import ChiSiamo from "./components/pages/ChiSiamo";
+import ListaDeiPost from "./components/pages/ListaDeiPost";
 
 function App() {
   
 
   return (
     <>
+
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/chi" element={<ChiSiamo />} />
+              <Route path="/post" element={<ListaDeiPost />} />
+          </Routes>
+      </BrowserRouter>
       
     </>
   )
