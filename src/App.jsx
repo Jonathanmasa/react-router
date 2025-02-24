@@ -1,12 +1,12 @@
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DefaultLayout from './components/layouts/DefaultLayout.jsx';
+import DefaultLayout from './layouts/DefaultLayout.jsx';
 // import degli elementi della libreria gestione delle rotte
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Pages
-import HomePage from "./components/pages/HomePage";
-import ChiSiamo from "./components/pages/ChiSiamo";
-import ListaDeiPost from "./components/pages/ListaDeiPost";
+import HomePage from "./pages/HomePage.jsx";
+import ChiSiamo from "./pages/ChiSiamo.jsx";
+import ListaDeiPost from "./pages/ListaDeiPost.jsx";
 
 
 
