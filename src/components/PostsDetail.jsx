@@ -26,14 +26,14 @@ export default function PostDetail() {
 
     return (
         <>
-           <div className="container">
+           <div className="container mt-5">
                 <nav className="mb-3">
                     <Link className="btn" to={`/posts/${parseInt(id) - 1}`}>Indietro</Link>
                     <Link className="btn" to={`/posts/${parseInt(id) + 1}`}>Avanti</Link>
                 </nav>
                 <h5>{post.title}</h5>
                 <img className="img-fluid w-50" src={post.image} alt={post.title} />
-                <p>{post.content}</p>
+                <p className="text-white">{post.content}</p>
            </div>
             
         </>
