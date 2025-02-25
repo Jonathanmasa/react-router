@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from "./pages/HomePage.jsx";
 import ChiSiamo from "./pages/ChiSiamo.jsx";
 import ListaDeiPost from "./pages/ListaDeiPost.jsx";
+import PostsDetailPage from "./pages/PostsDetailPage.jsx";
 
 
 
