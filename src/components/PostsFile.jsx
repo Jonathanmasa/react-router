@@ -77,9 +77,9 @@ const PostsFile = () => {
 
     return (
         <>
-            <h1>BLOG</h1>
+            <h1 className="d-flex justify-content-center m-4">BLOG</h1>
 
-            <form action="#">
+            <form className="d-flex justify-content-center" action="#">
                 <input
                  type="text" 
                  name="title"
@@ -117,7 +117,7 @@ const PostsFile = () => {
 
             {
                 post.map((articolo) => (
-                    <div className="card" key={articolo.id}>
+                    <div className="card m-3" key={articolo.id}>
                         <div className="card-header">
                         <h4 className="card-title">{articolo.title}</h4>
                         </div>
@@ -125,9 +125,9 @@ const PostsFile = () => {
                         <div className="card-body">
                             {/* <h5 className="card-title">{articolo.autore}</h5> */}
                             <p className="card-text">{articolo.content}</p>
-                            <p className="card-text"><img src={articolo.image} alt={articolo.content} /></p>
+                            <p className="card-text"><img className="img-fluid w-25" src={articolo.image} alt={articolo.content} /></p>
                             <p className="card-text">{articolo.tags.join(",")}</p>
-                            <Link className="m-2" to={`/posts/${articolo.id}`}>Vai al dettaglio</Link>
+                            <Link className="m-2 btn " to={`/posts/${articolo.id}`}>Vai al dettaglio</Link>
                             <button onClick={() => deletePost(articolo.id)}>Cancella</button>
                         </div>
                     </div>

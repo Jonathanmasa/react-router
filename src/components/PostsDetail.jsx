@@ -26,13 +26,15 @@ export default function PostDetail() {
 
     return (
         <>
-            <nav className="m-3">
-                <Link to={`/posts/${parseInt(id) - 1}`}>Indietro</Link>
-                <Link className="m-1" to={`/posts/${parseInt(id) + 1}`}>Avanti</Link>
-            </nav>
-            <h5>{post.title}</h5>
-            <img src={post.image} alt={post.title} />
-            <p>{post.content}</p>
+           <div className="container">
+                <nav className="mb-3">
+                    <Link className="btn" to={`/posts/${parseInt(id) - 1}`}>Indietro</Link>
+                    <Link className="btn" to={`/posts/${parseInt(id) + 1}`}>Avanti</Link>
+                </nav>
+                <h5>{post.title}</h5>
+                <img className="img-fluid w-50" src={post.image} alt={post.title} />
+                <p>{post.content}</p>
+           </div>
             
         </>
     );
