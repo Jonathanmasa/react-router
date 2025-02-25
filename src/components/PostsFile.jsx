@@ -79,7 +79,7 @@ const PostsFile = () => {
         <>
             <h1 className="d-flex justify-content-center m-4">BLOG</h1>
 
-            <form className="d-flex justify-content-center" action="#">
+            <form className="d-flex justify-content-center " action="#">
                 <input
                  type="text" 
                  name="title"

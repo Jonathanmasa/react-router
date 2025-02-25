@@ -13,7 +13,7 @@ export default function Header(props) {
     ];
 
     return (
-        <header>
+        <header className="position-fixed top-0 z-3">
             <Navbar linksProp={links} />
         </header>
     );
