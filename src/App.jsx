@@ -23,6 +23,9 @@ export default function App() {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/chi" element={<ChiSiamo />} />
                   <Route path="/post" element={<ListaDeiPost />} />
+                  <Route path="/posts">
+                        <Route path=":id" element={<PostsDetailPage />} />
+                    </Route>
               </Route>
           </Routes>
       </BrowserRouter>

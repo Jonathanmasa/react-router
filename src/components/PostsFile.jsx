@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 // import axios
 import axios from "axios";
-
+// aggiungo uso link in listato
+import { Link } from "react-router-dom";
 
 const initialFormData = {
     title: "",
@@ -49,16 +50,6 @@ const PostsFile = () => {
             })
             .catch(err => console.log(err))
       
-    //     setPost(prevPosts => {
-    //       const newPost = {
-    //         id: prevPosts.length === 0 ? 1 : prevPosts[prevPosts.length - 1].id + 1,
-    //         ...formData
-    //       };
-      
-    //       const updatedPosts = [...prevPosts, newPost];
-    //       console.log("Nuovi post:", updatedPosts); 
-    //       return updatedPosts;
-    //     });
       
         setFormData(initialFormData);
       }
@@ -129,6 +120,7 @@ const PostsFile = () => {
                             <p className="card-text">{articolo.content}</p>
                             <p className="card-text"><img src={articolo.image} alt={articolo.content} /></p>
                             <p className="card-text">{articolo.tags.join(",")}</p>
+                            <Link className="m-2" to={`/posts/${articolo.id}`}>Vai al dettaglio</Link>
                             <button onClick={() => deleteArticolo(articolo.id)}>Cancella</button>
                         </div>
                     </div>
