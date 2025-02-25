@@ -55,18 +55,25 @@ const PostsFile = () => {
       }
 
     //   cancellazione pizza
-    function deleteArticolo(idArticolo) {
-        const updateArticoli = post.filter((articolo) => {
-            return articolo.id !== idArticolo;
-        })
-        // chiamata cancellazione
-        axios.delete(`http://localhost:3000/posts/${idArticolo}`)
-            .then((res) => 
-                setPost(updateArticoli)
-            )
-            .catch(err => console.log(err))
+        function deletePost(idArticolo) {
+            // creiamo il nuovo array da sostituire allo state post
+            const updateArticoli = post.filter((articolo) => {
+                return articolo.id !== idArticolo;
+            })
+    
+            // chiamata ad API sulla rotta di delete
+            axios.delete(`http://localhost:3000/posts/${idArticolo}`)
+                .then(res =>
+                    console.log(res),
+                    
+                    setPost(updateArticoli)
+                )
+                .catch(err => console.log(err))
+    
+    
+        }
             
-    }
+    
 
     return (
         <>
@@ -121,7 +128,7 @@ const PostsFile = () => {
                             <p className="card-text"><img src={articolo.image} alt={articolo.content} /></p>
                             <p className="card-text">{articolo.tags.join(",")}</p>
                             <Link className="m-2" to={`/posts/${articolo.id}`}>Vai al dettaglio</Link>
-                            <button onClick={() => deleteArticolo(articolo.id)}>Cancella</button>
+                            <button onClick={() => deletePost(articolo.id)}>Cancella</button>
                         </div>
                     </div>
 
